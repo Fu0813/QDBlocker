@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <queries>
+        <package android:name="com.qidian.QDReader" />
+        <package android:name="com.haoyang.qdblocker.lab" />
+        <package android:name="com.emanuelef.remote_capture" />
+        <package android:name="com.pcapdroid.mitm" />
+    </queries>
+    <application
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/qdblocker_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/qdblocker_icon"
+        android:networkSecurityConfig="@xml/probe_network_security"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.QDBlocker">
+        <activity android:name=".MainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".NetworkProbeActivity" android:exported="true" />
+        <activity android:name=".CaptureControlActivity" android:exported="true" />
+        <activity android:name=".PhoneSetupActivity" android:exported="false" />
+        <provider
+            android:name=".ProbeProvider"
+            android:authorities="com.haoyang.qdblocker.probe"
+            android:exported="true"
+            android:grantUriPermissions="true" />
+    </application>
+
+</manifest>
