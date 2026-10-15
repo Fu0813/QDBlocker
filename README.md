@@ -53,7 +53,7 @@ name:测试用户
 
 ## 构建与检查
 
-需要 JDK 21、Android SDK Platform 37、Build Tools 37.0.0 和 Python 3。使用 Android Studio 打开项目，或配置 `JAVA_HOME`、`ANDROID_HOME` 后运行：
+需要 JDK 21、Android SDK Platform 37（SDK 包名 `platforms;android-37.0`）、Build Tools 37.0.0、SDK Command-line Tools 22+ 和 Python 3。使用 Android Studio 打开项目，或配置 `JAVA_HOME`、`ANDROID_HOME` 后运行：
 
 ```bash
 python -m unittest discover -s proxy -p 'test_*.py'
